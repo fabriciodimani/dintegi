@@ -45,8 +45,8 @@ function Header() {
         ))}
       </nav>
 
-      <a className="headerCta" href="#contacto">
-        Solicitar diagnóstico
+      <a className="headerCta" href="/demo/index.html">
+        Ver demo
       </a>
     </header>
   )
