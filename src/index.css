@@ -2540,3 +2540,178 @@ main { background: #ffffff; }
     font-size: 11px !important;
   }
 }
+/* Consulta comercial y presentación personal */
+.demoNotice{color:#ccd9eb;font-size:12px;text-align:center;margin:22px 0 0;line-height:1.5}
+.sectionIntro{max-width:760px;margin:0 auto 30px;color:#536176;text-align:center;line-height:1.7}
+.caseCard{height:auto;min-height:360px;overflow:visible}
+.caseOverlay{position:relative;inset:auto}
+.caseDetails{margin-top:16px;font-size:14px;line-height:1.6}
+.caseDetails summary{cursor:pointer;font-weight:700;color:#0879bd;padding:8px 0}
+.caseDetails p{margin:12px 0}
+.personalFounder{display:grid;grid-template-columns:1fr 1.3fr;gap:45px;padding:42px;border-radius:24px;background:#edf5fc;border:1px solid #d5e3ef}
+.personalFounder h2{text-align:left;margin:12px 0;font-size:36px}
+.personalFounder h3{margin-top:0;color:#062b5f;font-size:23px}
+.personalFounder p{line-height:1.8;color:#44536a}
+.personalFounder a{color:#075a9e;font-weight:700}
+.founderSubtitle{font-size:16px}
+.consultationSection{display:grid;grid-template-columns:1fr 1.1fr;gap:42px;padding-top:50px;padding-bottom:60px;scroll-margin-top:110px}
+.consultationSection h2{text-align:left;font-size:36px;line-height:1.2}
+.consultationSection p{color:#536176;line-height:1.7}
+.offerBox{margin-top:28px;border-left:4px solid #0cb6be;background:#eff7fb;padding:22px;border-radius:0 15px 15px 0}
+.offerBox h3{color:#062b5f;margin-top:0}
+.consultationSection form{background:white;border:1px solid #dbe5ef;box-shadow:0 12px 35px #072b5f0a;border-radius:22px;padding:28px}
+.consultationSection label{display:block;color:#18334f;font-size:14px;font-weight:600;margin-bottom:16px}
+.consultationSection input,.consultationSection textarea,.consultationSection select{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid #c4d3e0;border-radius:8px;background:#fbfdff;font:inherit;color:#23354b;box-sizing:border-box}
+.consultationSection input:focus,.consultationSection textarea:focus,.consultationSection select:focus{outline:2px solid #0788c9;outline-offset:2px}
+.formPair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formPrivacy{font-size:12px}
+.consultationSection button{border:0;cursor:pointer;font:inherit}
+.messagePreview{border-top:1px solid #dbe5ef;margin-top:24px;padding-top:20px}
+.messageText{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f6fb;padding:15px;border-radius:10px;font-size:14px}
+.caseImage{min-height:150px}
+@media(max-width:800px){.personalFounder,.consultationSection{grid-template-columns:1fr;gap:24px}.personalFounder{padding:25px}.consultationSection form{padding:20px}.personalFounder h2,.consultationSection h2{font-size:30px}}
+@media(max-width:460px){.formPair{grid-template-columns:1fr;gap:0}.consultationSection .btn{white-space:normal;text-align:center}.hero h1{font-size:42px}}
+.caseCard{height:auto!important;min-height:310px!important;overflow:hidden!important;background:#062b5f!important}
+.caseImage{position:relative!important;inset:auto!important;height:120px!important;min-height:120px!important}
+.caseOverlay{height:auto!important;min-height:190px;padding:22px!important;background:#062b5f!important;justify-content:flex-start!important}
+.caseDetails summary{color:#38e9ff}
+.caseOverlay .caseDetails p{margin:12px 0!important;max-width:100%!important;font-size:13px!important;line-height:1.6!important}
+.caseOverlay .caseDetails a{width:auto!important}
+.hero h1{font-size:clamp(38px,4.6vw,64px)!important;line-height:1.08!important}
+.hero .lead{font-size:18px!important}
+
+/* Dashboard y aclaración uno debajo del otro */
+.heroVisual {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  min-width: 0;
+}
+
+.heroVisual .deviceWrap {
+  width: 100% !important;
+  flex-shrink: 0;
+}
+
+.heroVisual .demoNotice {
+  width: 100%;
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Ámbito: identificación inmobiliaria sin imagen de tienda */
+.caseImage.caseRealEstate {
+  background: linear-gradient(135deg, #17334c, #b8894a) !important;
+}
+
+.caseRealEstate .caseVisualIcon {
+  opacity: 1 !important;
+  filter: none !important;
+  font-size: 58px !important;
+  top: 38px !important;
+}
+
+/* Captura real del sitio de Ámbito */
+.caseImage.caseRealEstate {
+  background: url('/images/ambito-web.png')
+    center top / cover no-repeat !important;
+}
+
+.caseRealEstate .caseVisualIcon {
+  display: none !important;
+}
+
+.caseImage.caseRealEstate::before,
+.caseImage.caseRealEstate::after {
+  display: none !important;
+}
+
+.caseImage.caseBapo {
+  background: url('/images/bapo-web.png')
+    center top / cover no-repeat !important;
+}
+
+.caseBapo .caseVisualIcon,
+.caseImage.caseBapo::before,
+.caseImage.caseBapo::after {
+  display: none !important;
+}
+
+.caseCard .caseImage.caseBapo span {
+  background: #087f5b !important;
+  color: #ffffff !important;
+  border: 1px solid #065f46 !important;
+}
+
+.caseImage.caseDistribucion {
+  background: url('/images/distribucion-web.png')
+    center top / cover no-repeat !important;
+}
+
+.caseDistribucion .caseVisualIcon,
+.caseImage.caseDistribucion::before,
+.caseImage.caseDistribucion::after {
+  display: none !important;
+}
+
+.caseCard .caseImage.caseDistribucion span {
+  background: #b45309 !important;
+  color: #fff !important;
+  border: 1px solid #92400e !important;
+}
+
+.personalFounder {
+  background: linear-gradient(
+    115deg,
+    #082653 0%,
+    #104c98 65%,
+    #244e85 100%
+  ) !important;
+  border: 1px solid #ffffff20 !important;
+  border-radius: 18px;
+  box-shadow: 0 16px 35px #08265326;
+  gap: 36px;
+  padding: 32px;
+}
+
+.personalFounder > div:first-child {
+  border-right: 1px solid #ffffff25;
+  padding-right: 28px;
+}
+
+.personalFounder h2,
+.personalFounder h3 {
+  color: #ffffff !important;
+}
+
+.personalFounder h2 {
+  font-size: 27px;
+}
+
+.personalFounder h3 {
+  font-size: 25px;
+}
+
+.personalFounder p {
+  color: #e1ecfc !important;
+}
+
+.personalFounder .eyebrow,
+.personalFounder a {
+  color: #39e6ff !important;
+}
+
+@media (max-width: 800px) {
+  .personalFounder {
+    padding: 26px;
+  }
+
+  .personalFounder > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid #ffffff25;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+}

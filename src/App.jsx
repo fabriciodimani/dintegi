@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dintegiLogo from './assets/dintegi-logo.png'
-import fdLogo from './assets/fd-logo.png'
 
 import {
   Truck,
@@ -146,26 +145,25 @@ function Hero() {
       <div className="heroBackgroundImage" />
       <div className="heroText">
         <p className="eyebrow"><span />Software a medida para PyMEs</p>
-        <h1>Sistemas que <mark>ordenan</mark> empresas</h1>
+        <h1>Tu problema de gestión,<br /><mark>una solución</mark> a medida</h1>
         <p className="lead">
-          Desarrollamos sistemas web administrativos a medida para empresas que necesitan ordenar procesos,
-          ventas, pagos, reportes, clientes y gestión interna en una sola plataforma.
+          Soy Fabricio Dimani, ingeniero en Sistemas. Desarrollo y mejoro sistemas para ventas, cobranzas, logística y reportes. Contame qué te está complicando el trabajo y definamos una primera entrega.
         </p>
 
         <div className="heroActions">
-          <a href={demoUrl} target="_blank" rel="noreferrer" className="btn primary">Ver demo <span>→</span></a>
-          <a href="#contacto" className="btn secondary">Solicitar diagnóstico</a>
+          <a href="#consulta" className="btn primary">Contame tu problema <span>→</span></a>
+          <a href="#casos" className="btn secondary">Conocé mi trabajo</a>
         </div>
 
         <div className="trustRow">
           <span>● A medida de tu negocio</span>
-          <span>● Seguro y confiable</span>
-          <span>● Información en tiempo real</span>
+          <span>● Entregas por etapas</span>
+          <span>● Atención directa conmigo</span>
         </div>
       </div>
 
       <div className="heroVisual">
-        <DashboardMockup />
+        <DashboardMockup /><p className="demoNotice">Vista ilustrativa con datos ficticios. No representa resultados de clientes.</p>
       </div>
     </section>
   )
@@ -175,7 +173,7 @@ const services = [
   {
     icon: Truck,
     title: 'Transporte y logística',
-    text: 'Control total de viajes, flotas, entregas, gastos y trazabilidad.',
+    text: 'Viajes, unidades, gastos, rendiciones y seguimiento de operaciones.',
     accent: 'blue',
   },
   {
@@ -215,10 +213,10 @@ function Services() {
 }
 
 const benefits = [
-  { icon: FileX, title: 'Menos papeles', text: 'Digitalizamos procesos y eliminamos tareas manuales.' },
-  { icon: ShieldCheck, title: 'Más control', text: 'Datos actualizados para decidir con confianza.' },
-  { icon: PieChart, title: 'Reportes claros', text: 'Información visual para impulsar tu negocio.' },
-  { icon: Cloud, title: 'Procesos digitales', text: 'Sistemas ágiles, escalables y personalizados.' },
+  { icon: FileX, title: 'Planillas que ya no alcanzan', text: 'Unificamos registros y definimos un flujo que tu equipo pueda seguir.' },
+  { icon: ShieldCheck, title: 'Saldos que no coinciden con tu realidad', text: 'Revisamos cobros, pagos y movimientos para localizar inconsistencias.' },
+  { icon: PieChart, title: 'Reportes que faltan y no reflejan tu necesidad', text: 'Convertimos los datos disponibles en consultas, totales y exportaciones útiles.' },
+  { icon: Cloud, title: 'Un sistema que quedó a medias', text: 'Evaluamos el código y el proceso antes de definir cómo darle continuidad.' },
 ]
 
 function Benefits() {
@@ -238,6 +236,7 @@ function Benefits() {
 }
 
 const cases = [
+  { name: 'Ámbito Inmobiliaria', type: 'Web y catálogo de propiedades', text: 'Desarrollo de sitio inmobiliario responsive, catálogo, ficha de propiedad, filtros pro zonz, por tipo, y consulta por WhatsApp.', className: 'caseRealEstate', visual: '🏠' },
   {
     name: 'Danlu',
     type: 'Transporte y logística',
@@ -255,14 +254,14 @@ const cases = [
   {
     name: 'Riders',
     type: 'Ventas, logística y auditoría',
-    text: 'Gestión de ventas, pagos, financieras, pedidos, logística internacional, OCR/IA y auditoría de cambios del sistema.',
+    text: 'Gestión de ventas, pagos, financieras, pedidos, logística internacional, permisos y auditoría de cambios del sistema.',
     className: 'caseRiders',
     visual: '🏍️',
   },
   {
     name: 'Q2 Digital',
     type: 'Acreditaciones para eventos',
-    text: 'Registro previo, invitaciones, QR, check-in, reimpresión de credenciales, presentes/ausentes y reportes finales.',
+    text: 'Registro previo, invitaciones, QR, check-in, envio QR or correo electrónico, reimpresión de credenciales, presentes/ausentes y reportes finales.',
     className: 'caseEvents',
     visual: '🎟️',
   },
@@ -280,23 +279,42 @@ const cases = [
     className: 'caseDocs',
     visual: '📄',
   },
+  {
+    name: 'BAPO',
+    type: 'Obras públicas',
+    text: 'Sistema de gestión de obras públicas: seguimiento de obras, licitaciones, distribución, certificaciones, redetrminación de precios y tableros de consulta.',
+    className: 'caseBapo',
+    visual: '🏗️',
+  },
+  {
+    name: 'Retiro 360',
+    type: 'Preventa, distribución y entrega',
+    text: 'Sistema de gestión y trazabilidad de pedidos: preventa, preparación, asignación de camiones, entregas, regreso al depósito y cuentas corrientes.',
+    className: 'caseDistribucion',
+    visual: '🚚',
+  },
 ]
 
 function Cases() {
   return (
     <section id="casos" className="section casesSection">
-      <h2>Casos de aplicación</h2>
+      <h2>Trabajo real, procesos concretos</h2>
+      <p className="sectionIntro">Desarrollos que muestran las áreas en las que puedo ayudarte. Sin datos privados ni resultados inventados.</p>
       <div className="caseGrid">
         {cases.map((item) => (
           <article className="caseCard" key={item.name}>
             <div className={`caseImage ${item.className}`}>
-              <div className="caseVisualIcon">{item.visual}</div>
+              <div className="caseVisualIcon" aria-hidden="true">{item.visual}</div>
               <span>{item.type}</span>
             </div>
             <div className="caseOverlay">
-              <h3>{item.name}</h3>
-              <p>{item.text}</p>
-              <a href="#contacto">Ver caso →</a>
+              <h3>{item.name}</h3><p>{item.text}</p>
+              <details className="caseDetails">
+                <summary>Ver qué desarrollé</summary>
+                <p>{item.text}</p>
+                <p>Mi trabajo: analizar el proceso, implementar las funciones y acompañar los ajustes. Las capturas y demostraciones de clientes se comparten únicamente con autorización.</p>
+                <a href="#consulta">Tengo una necesidad similar →</a>
+              </details>
             </div>
           </article>
         ))}
@@ -306,9 +324,9 @@ function Cases() {
 }
 
 const steps = [
-  { number: '1', icon: Search, title: 'Diagnosticamos', text: 'Escuchamos el proceso real y definimos objetivos claros.' },
+  { number: '1', icon: Search, title: 'Diagnosticamos', text: 'Escuchamos el proceso real y definimos objetivos.' },
   { number: '2', icon: ClipboardList, title: 'Proponemos', text: 'Alcance, tiempos y presupuesto sin vueltas.' },
-  { number: '3', icon: Code2, title: 'Desarrollamos', text: 'Sistema a medida con pruebas y entregas parciales.' },
+  { number: '3', icon: Code2, title: 'Desarrollamos', text: 'Sistema a medida con entregas parciales.' },
   { number: '4', icon: Rocket, title: 'Implementamos', text: 'Capacitación, puesta en marcha y acompañamiento.' },
 ]
 
@@ -332,55 +350,50 @@ function Process() {
 function Founder() {
   return (
     <section className="section founderSection">
-      <div className="founderCard founderCardPro">
-        <div className="founderMedia founderMediaPro">
-          <div className="founderIdentity">
-            <div className="founderNameBlock">
-              <strong>Ing. Fabricio Dimani</strong>
-              <span>Fundador / CEO</span>
-            </div>
-
-            <div className="founderBadgeList">
-              <div className="founderBadge">+15 años de experiencia</div>
-              <div className="founderBadge">Más de 100 proyectos</div>
-            </div>
-          </div>
+      <div className="personalFounder">
+        <div><p className="eyebrow">EXPERIENCIA  DETRÁS DE DINTEGI</p>
+          <h2>Ing. Fabricio Dimani</h2>
+          <p className="founderSubtitle">Ingeniero en Sistemas de Información · UTN<br />Formación Full Stack · RollingCode School</p>
         </div>
-
-        <div className="founderContent founderContentPro">
-          <div className="quoteMark">“</div>
-
-          <p className="eyebrow">EXPERIENCIA QUE GENERA CONFIANZA</p>
-
-          <h2>Más de 15 años impulsando la transformación digital de empresas</h2>
-
-          <p>
-            En DINTEGI combinamos experiencia real en gestión y tecnología para crear sistemas
-            que realmente funcionan en el día a día. No vendemos software genérico:
-            desarrollamos soluciones a medida que simplifican, ordenan y hacen crecer tu negocio.
-            Nuestro compromiso es estar cerca, entender tu realidad y entregar resultados.
-          </p>
-        </div>
-
-        <div className="founderImageSide founderImageSideClean">
-          <div className="founderStatBox">
-            <strong>+15</strong>
-            <span>Años de experiencia</span>
-          </div>
-
-          <div className="founderStatBox">
-            <strong>+100</strong>
-            <span>Proyectos y módulos</span>
-          </div>
-
-          <div className="founderStatBox">
-            <strong>99.9%</strong>
-            <span>Foco en continuidad</span>
-          </div>
+        <div><h3>Más de 20 años de experiencia</h3>
+          <p>Me involucro en el problema de tu empresa: cómo venden, cobran, pagan y organizan el trabajo. A partir de ese proceso, desarrollo una solución y la mejoro con vos.</p>
+          <p>Trabajo con React, Node.js, Express y MongoDB. Desde Tucumán, con atención remota en español y entregas acordadas por etapas.</p>
+          <a href="https://www.linkedin.com/in/fabriciodimani/" target="_blank" rel="noreferrer">Ver mi perfil profesional →</a>
         </div>
       </div>
     </section>
   )
+}
+
+function Consultation() {
+  const [form, setForm] = useState({ name: '', company: '', problem: '', current: 'Planillas / registros manuales', urgency: 'Este mes', type: 'Mejorar un sistema existente' })
+  const [ready, setReady] = useState(false)
+  const change = (e) => { setForm({ ...form, [e.target.name]: e.target.value }); setReady(false) }
+  const source = new URLSearchParams(window.location.search).get('utm_source')?.slice(0, 80) || 'web DINTEGI'
+  const message = `Hola Fabricio. Soy ${form.name}, de ${form.company}.
+Necesito: ${form.type}.
+Problema: ${form.problem}
+Actualmente usamos: ${form.current}.
+Horizonte: ${form.urgency}.
+Llegué desde: ${source}.
+Quisiera conversar sobre una primera etapa con alcance y presupuesto definidos.`
+  return <section id="consulta" className="section consultationSection">
+    <div><p className="eyebrow">EMPECEMOS POR TU NECESIDAD</p><h2>Contame qué necesitás resolver</h2>
+      <p>No necesitás saber de tecnología. Describí lo que pasa y lo que debería pasar.</p>
+      <div className="offerBox"><h3>Una primera etapa con alcance definido</h3><p>Contame tu problema en una primera consulta sin costo. Si hace falta revisar un sistema o analizar un proceso en profundidad, te propongo un diagnóstico con alcance, precio y plazo acordados antes de comenzar.</p><p>También podemos definir un sistema nuevo o una mejora concreta por etapas.</p></div>
+    </div>
+    <form onSubmit={(e) => { e.preventDefault(); setReady(true) }}>
+      <label>Tu nombre<input name="name" autoComplete="name" required maxLength={100} value={form.name} onChange={change} /></label>
+      <label>Empresa o actividad<input name="company" autoComplete="organization" required maxLength={140} value={form.company} onChange={change} /></label>
+      <label>¿Qué necesitás?<select name="type" value={form.type} onChange={change}><option>Mejorar un sistema existente</option><option>Desarrollar un sistema nuevo</option><option>Resolver un proceso con planillas</option><option>Crear o mejorar una web comercial</option></select></label>
+      <label>¿Qué problema tenés?<textarea name="problem" required minLength={15} maxLength={1500} rows={4} placeholder="Ejemplo: cargamos los cobros en dos lugares y los saldos no coinciden." value={form.problem} onChange={change} /></label>
+      <div className="formPair"><label>¿Qué usan hoy?<select name="current" value={form.current} onChange={change}><option>Planillas / registros manuales</option><option>Un sistema existente</option><option>Un prototipo incompleto</option><option>Todavía no tenemos sistema</option></select></label>
+      <label>¿Para cuándo?<select name="urgency" value={form.urgency} onChange={change}><option>Este mes</option><option>En 1 a 3 meses</option><option>Estoy evaluando opciones</option></select></label></div>
+      <p className="formPrivacy">Estos datos no se guardan en la web. No incluyas contraseñas ni información de tus clientes. Primero revisás el mensaje y luego decidís enviarlo por WhatsApp.</p>
+      <button className="btn primary" type="submit">Preparar mensaje para WhatsApp →</button>
+      {ready && <div className="messagePreview" role="status"><h3>Tu consulta está lista para revisar</h3><p className="messageText">{message}</p><a className="btn primary" href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`} target="_blank" rel="noreferrer">Abrir WhatsApp con este mensaje</a><p>La consulta se envía cuando confirmás el envío en WhatsApp. Todavía no hay un presupuesto ni una contratación.</p></div>}
+    </form>
+  </section>
 }
 
 function CTA() {
@@ -388,8 +401,8 @@ function CTA() {
     <section className="ctaBand">
       <div className="ctaIcon"><BarChart3 size={34} strokeWidth={2.1} /></div>
       <div>
-        <h2>¿Listo para digitalizar tu empresa?</h2>
-        <p>Hablemos por WhatsApp y veamos cómo adaptar la demo a tu proceso real.</p>
+        <h2>¿Qué te está complicando el trabajo?</h2>
+        <p>Conversemos sobre el problema y una primera entrega concreta.</p>
       </div>
       <a href={whatsappUrl} target="_blank" rel="noreferrer" className="btn light">Escribinos por WhatsApp</a>
     </section>
@@ -405,7 +418,7 @@ function Footer() {
             <strong>DINTEGI</strong>
             <span>Soluciones Digitales</span>
           </div>
-          <p>Desarrollamos sistemas web a medida para PyMEs que quieren trabajar mejor, vender más y controlar su negocio.</p>
+          <p>Sistemas empresariales y webs comerciales a medida. Atención directa con Fabricio Dimani, desde Tucumán.</p>
         </div>
 
         <div>
@@ -424,7 +437,7 @@ function Footer() {
         <div>
           <h3>Contacto</h3>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: +54 381 5176145</a>
-          <a href="mailto:contacto@dintegi.com.ar">contacto@dintegi.com.ar</a>
+          {/* <a href="mailto:contacto@dintegi.com.ar">contacto@dintegi.com.ar</a> */}
           <span>Tucumán, Argentina</span>
           <a className="footerButton" href={demoUrl} target="_blank" rel="noreferrer">Ver demo</a>
         </div>
@@ -445,6 +458,7 @@ export default function App() {
         <Cases />
         <Process />
         <Founder />
+        <Consultation />
         <CTA />
       </main>
       <Footer />
