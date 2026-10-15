@@ -437,7 +437,7 @@ function Footer() {
         <div>
           <h3>Contacto</h3>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: +54 381 5176145</a>
-          {/* <a href="mailto:contacto@dintegi.com.ar">contacto@dintegi.com.ar</a> */}
+          <a href="mailto:contacto@dintegi.com.ar">fabricio@dintegi.com.ar</a>
           <span>Tucumán, Argentina</span>
           <a className="footerButton" href={demoUrl} target="_blank" rel="noreferrer">Ver demo</a>
         </div>
