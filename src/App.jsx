@@ -287,7 +287,7 @@ const cases = [
     visual: '🏗️',
   },
   {
-    name: 'Retiro 360',
+    name: 'Distripollo',
     type: 'Preventa, distribución y entrega',
     text: 'Sistema de gestión y trazabilidad de pedidos: preventa, preparación, asignación de camiones, entregas, regreso al depósito y cuentas corrientes.',
     className: 'caseDistribucion',

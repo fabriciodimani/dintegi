@@ -27,31 +27,18 @@ La carpeta final para publicar queda en:
 dist/
 ```
 
-## Publicación recomendada en Cloudflare Pages
+## Publicación en Vercel
 
-1. Subir el proyecto a GitHub.
-2. En Cloudflare Pages: crear proyecto conectado al repositorio.
-3. Build command:
-
-```bash
-npm run build
-```
-
-4. Output directory:
-
-```txt
-dist
-```
-
-5. Conectar dominios:
-
-```txt
-dintegi.com.ar
-www.dintegi.com.ar
-```
+Conectar el repositorio a Vercel. Usar `npm run build` y directorio de salida `dist`.
+Los dominios de la web son `dintegi.com.ar` y `www.dintegi.com.ar`.
+Para el administrador, configurar `VITE_ADMIN_API_URL` y publicar la API por separado según `LEEME_ADMIN.md`.
 
 ## Contacto configurado
 
 - WhatsApp: +54 381 5176145
-- Email: contacto@dintegi.com.ar
+- Email: fabricio@dintegi.com.ar
 - Ubicación: Tucumán, Argentina
+
+## Administrador de campañas
+
+El panel está en `/admin`. Antes de usarlo, seguí [LEEME_ADMIN.md](LEEME_ADMIN.md): requiere iniciar la API de `server/` y configurar una contraseña. El envío real viene desactivado.
