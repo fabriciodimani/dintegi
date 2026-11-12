@@ -2808,3 +2808,51 @@ main { background: #ffffff; }
     flex-basis: 185px !important;
   }
 }
+
+/* Capturas de los proyectos: proporción completa y sin recortar el mapa. */
+.caseImage.caseBapo {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 1195 / 878;
+  background-size: contain !important;
+  background-color: #f5f8f4 !important;
+}
+.caseImage.caseDistribucion {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 1172 / 514;
+  background-size: contain !important;
+  background-color: #fff !important;
+}
+.caseCard .caseImage.caseBapo span,
+.caseCard .caseImage.caseDistribucion span {
+  display: none !important;
+}
+.arcaHighlight {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+  padding: 26px 28px;
+  border: 1px solid #c4e5f3;
+  border-radius: 20px;
+  background: linear-gradient(110deg, #eef7ff, #f3fcfc);
+  text-align: left;
+}
+.arcaHighlightIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 58px;
+  height: 58px;
+  color: #087cbd;
+  background: #dceffa;
+  border-radius: 15px;
+}
+.arcaHighlight h3 { margin: 0 0 8px; color: #062b5f; font-size: 21px; }
+.arcaHighlight p { margin: 0; color: #455c76; line-height: 1.6; }
+.arcaHighlight a { margin-left: auto; color: #075a9e; font-weight: 800; flex: 0 0 210px; }
+@media (max-width: 820px) {
+  .arcaHighlight { flex-wrap: wrap; padding: 22px; gap: 16px; }
+  .arcaHighlight > div { flex: 1 1 200px; }
+  .arcaHighlight a { margin-left: 0; flex-basis: 100%; }
+}

@@ -182,7 +182,7 @@ const services = [
   {
     icon: Handshake,
     title: 'Ventas y gestión comercial',
-    text: 'Clientes, presupuestos, pedidos, cobranzas y objetivos de venta.',
+    text: 'Clientes, presupuestos, pedidos, cobranzas e integración con ARCA para facturación electrónica.',
     accent: 'orange',
   },
   {
@@ -234,6 +234,12 @@ function Benefits() {
           </article>
         ))}
       </div>
+      <aside className="arcaHighlight" aria-label="Integración con ARCA">
+        <span className="arcaHighlightIcon" aria-hidden="true"><FileText size={30} /></span>
+        <div><h3>Integración con ARCA · Facturación electrónica</h3>
+          <p>Conectamos la facturación electrónica con las ventas y la gestión administrativa de tu empresa.</p></div>
+        <a href="#consulta">Consultar por esta integración →</a>
+      </aside>
     </section>
   )
 }
@@ -285,14 +291,14 @@ const cases = [
   {
     name: 'BAPO',
     type: 'Obras públicas',
-    text: 'Sistema de gestión de obras públicas: seguimiento de obras, licitaciones, distribución, certificaciones, redetrminación de precios y tableros de consulta.',
+    text: 'Gestión de obras públicas: seguimiento de obras, licitaciones, certificaciones, redeterminación de precios y consultas. La imagen muestra el prototipo de mapa territorial con datos ficticios.',
     className: 'caseBapo',
     visual: '🏗️',
   },
   {
-    name: 'Distripollo',
+    name: 'DISTRI360',
     type: 'Preventa, distribución y entrega',
-    text: 'Sistema de gestión y trazabilidad de pedidos: preventa, preparación, asignación de camiones, entregas, regreso al depósito y cuentas corrientes.',
+    text: 'Sistema integral de distribución: compras, ventas, stock, precios, preparación de pedidos, camiones, entregas y cuentas corrientes. Integración con ARCA para facturación electrónica.',
     className: 'caseDistribucion',
     visual: '🚚',
   },
@@ -306,7 +312,7 @@ function Cases() {
       <div className="caseGrid">
         {cases.map((item) => (
           <article className="caseCard" key={item.name}>
-            <div className={`caseImage ${item.className}`}>
+            <div className={`caseImage ${item.className}`} role={item.className === 'caseBapo' || item.className === 'caseDistribucion' ? 'img' : undefined} aria-label={item.className === 'caseBapo' ? 'Prototipo del mapa de obras públicas de Tucumán, con datos ficticios' : item.className === 'caseDistribucion' ? 'Pantalla de ingreso a DISTRI360' : undefined}>
               <div className="caseVisualIcon" aria-hidden="true">{item.visual}</div>
               <span>{item.type}</span>
             </div>
