@@ -2856,3 +2856,18 @@ main { background: #ffffff; }
   .arcaHighlight > div { flex: 1 1 200px; }
   .arcaHighlight a { margin-left: 0; flex-basis: 100%; }
 }
+
+/* Altura uniforme de las capturas en todas las tarjetas de proyectos. */
+.caseImage.caseBapo,
+.caseImage.caseDistribucion {
+  height: 120px !important;
+  min-height: 120px !important;
+  aspect-ratio: auto;
+  background-size: cover !important;
+}
+.caseImage.caseBapo {
+  background-position: center 58% !important;
+}
+.caseImage.caseDistribucion {
+  background-position: center center !important;
+}
