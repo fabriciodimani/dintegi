@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import dintegiLogo from './assets/dintegi-logo.png'
+import dintegiLogo from './assets/dintegi-logo.svg'
+import dintegiSymbol from './assets/dintegi-simbolo-oscuro.svg'
 
 import {
   Truck,
@@ -36,7 +37,9 @@ function Header() {
       <a className="brand" href="#inicio" aria-label="DINTEGI inicio">
         <img
           src={dintegiLogo}
-          alt="DINTEGI Soluciones Digitales"
+          alt="DINTEGI · Soluciones tecnológicas"
+          width="1124"
+          height="229"
           className="headerLogoDintegi"
         />
       </a>
@@ -414,10 +417,9 @@ function Footer() {
     <footer id="contacto" className="footer">
       <div className="footerGrid">
         <div className="footerBrand">
-          <div className="footerLogoTextPro">
-            <strong>DINTEGI</strong>
-            <span>Soluciones Digitales</span>
-          </div>
+          <a className="footerSymbolLink" href="#inicio" aria-label="DINTEGI · Volver al inicio">
+            <img className="footerSymbol" src={dintegiSymbol} alt="DINTEGI" width="238" height="227" loading="lazy" />
+          </a>
           <p>Sistemas empresariales y webs comerciales a medida. Atención directa con Fabricio Dimani, desde Tucumán.</p>
         </div>
 
@@ -443,7 +445,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footerBottom">© 2026 DINTEGI Soluciones Digitales. Todos los derechos reservados.</div>
+      <div className="footerBottom">© 2026 DINTEGI Soluciones tecnológicas. Todos los derechos reservados.</div>
     </footer>
   )
 }

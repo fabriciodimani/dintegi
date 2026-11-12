@@ -2715,3 +2715,47 @@ main { background: #ffffff; }
     padding-bottom: 20px;
   }
 }
+/* Identidad DINTEGI: logo completo arriba y símbolo independiente en el pie. */
+.siteHeader .brand {
+  width: 245px !important;
+  min-width: 0 !important;
+  max-width: 245px !important;
+  height: 58px !important;
+  flex: 0 1 245px !important;
+}
+.siteHeader .brand img.headerLogoDintegi {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+}
+.footerSymbolLink {
+  display: inline-block !important;
+  width: fit-content;
+  margin-bottom: 18px !important;
+  border-radius: 8px;
+}
+.footerBrand img.footerSymbol {
+  width: 66px !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+.footerSymbolLink:focus-visible {
+  outline: 2px solid #00b6f1;
+  outline-offset: 7px;
+}
+@media (max-width: 820px) {
+  .siteHeader .brand {
+    width: 190px !important;
+    max-width: 190px !important;
+    height: 50px !important;
+    flex: 1 1 190px !important;
+  }
+}
+@media (max-width: 460px) {
+  .siteHeader .brand {
+    width: 165px !important;
+    max-width: 165px !important;
+    flex-basis: 165px !important;
+  }
+}
