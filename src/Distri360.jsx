@@ -23,7 +23,7 @@ export default function Distri360() {
         <p className="d360-lead">Una misma plataforma para vender, preparar pedidos, controlar el stock y seguir las entregas y los cobros de tu negocio.</p>
         <div className="d360-actions">
           <a className="btn primary" href={DISTRI360_LOGIN_URL} target="_blank" rel="noopener noreferrer">Ingresar a la demo</a>
-          <a className="btn secondary" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Solicitar acceso</a>
+          <a className="btn secondary" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Coordinar una demostración</a>
         </div>
         <p className="d360-access-note"><ShieldCheck size={18} aria-hidden="true"/> Demo privada con usuario y contraseña. Datos de prueba.</p>
       </div>
@@ -32,6 +32,33 @@ export default function Distri360() {
         <img src="/images/distri360-demo.jpg" width="1363" height="936" alt="Pantalla de Inicio de DISTRI360: ventas por canal, gráfico e información de distribución con datos ficticios."/>
         <figcaption>Captura de una copia de demostración. Los datos son ficticios.</figcaption>
       </figure>
+    </section>
+
+    <section className="d360-video-section" id="video-distri360" aria-labelledby="d360-video-title">
+      <div className="d360-video-layout">
+        <div className="d360-video-copy">
+          <p className="d360-eyebrow">MIRÁ CÓMO SE CONECTA TU OPERACIÓN</p>
+          <h2 id="d360-video-title">Lo que entregás, lo que cobrás<br/>y lo que te deben.</h2>
+          <p>En 34 segundos, conocé cómo DISTRI360 conecta las entregas por peso real con la cuenta corriente del cliente y el registro de los cobros.</p>
+          <ul>
+            <li>Entregas con los kilos efectivamente recibidos.</li>
+            <li>Deuda del cliente según lo entregado.</li>
+            <li>Cobros en efectivo y por transferencia registrados.</li>
+          </ul>
+          <div className="d360-video-cta">
+            <a className="btn primary" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Coordinar una demostración</a>
+            <p>Contanos a qué se dedica tu empresa y coordinamos un horario por WhatsApp.</p>
+          </div>
+          <details className="d360-video-summary"><summary>Leer el resumen del video</summary><p>DISTRI360 permite registrar el peso real de una entrega, calcular el importe que corresponde al cliente y registrar sus cobros. El ejemplo muestra entregas por kilos y pagos en efectivo y por transferencia. Los importes y las empresas del video son ilustrativos.</p></details>
+        </div>
+        <figure className="d360-video-card">
+          <video controls playsInline preload="none" poster="/images/distri360-video-poster.jpg" width="1080" height="1920" aria-label="Presentación de DISTRI360: entregas, cuenta corriente y cobros" aria-describedby="d360-video-caption">
+            <source src="/videos/distri360-presentacion.mp4" type="video/mp4"/>
+            Tu navegador no permite reproducir este video. <a href="/videos/distri360-presentacion.mp4">Abrir el video de DISTRI360</a>.
+          </video>
+          <figcaption id="d360-video-caption">Presentación de 34 segundos · Datos ilustrativos.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section className="d360-section" aria-labelledby="d360-features">
@@ -57,7 +84,7 @@ export default function Distri360() {
         <p>Ingresá con el usuario que te entregó DINTEGI. Si todavía no tenés uno, solicitá una demostración para revisar el circuito de tu empresa.</p>
         <p className="d360-demo-limit">Este acceso corresponde a la demo de DISTRI360. La emisión fiscal de prueba se realiza en homologación y no genera facturas reales. La puesta en marcha de cada empresa se configura por separado.</p>
       </div>
-      <div className="d360-access-buttons"><a className="btn primary" href={DISTRI360_LOGIN_URL} target="_blank" rel="noopener noreferrer">Acceder a DISTRI360</a><a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Quiero una demostración</a></div>
+      <div className="d360-access-buttons"><a className="btn primary" href={DISTRI360_LOGIN_URL} target="_blank" rel="noopener noreferrer">Acceder a DISTRI360</a><a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Coordinar una demostración</a></div>
     </section>
     <div className="d360-back"><a href="/#inicio">Volver a DINTEGI</a></div>
   </main>

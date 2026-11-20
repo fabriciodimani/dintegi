@@ -470,7 +470,7 @@ export default function App() {
       <main>
         <section className="d360-teaser" aria-labelledby="d360-teaser-title">
           <div><p className="d360-eyebrow">PRODUCTO DINTEGI</p><h2 id="d360-teaser-title">Conocé DISTRI360</h2><p>Ventas, stock, pedidos, entregas y cobros para distribuidoras y comercios.</p></div>
-          <div><a className="btn primary" href={demoUrl}>Ver el producto</a><a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Solicitar una demostración</a></div>
+          <div><a className="btn primary" href={demoUrl}>Ver el producto</a><a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Coordinar una demostración</a></div>
         </section>
         <Services />
         <Benefits />
