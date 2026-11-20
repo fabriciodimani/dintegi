@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Distri360 from './Distri360'
+import { DISTRI360_LOGIN_URL, DISTRI360_PAGE, DISTRI360_CONTACT } from './distri360Config'
 import dintegiLogo from './assets/dintegi-logo.svg'
 import dintegiSymbol from './assets/dintegi-simbolo-oscuro.svg'
 
@@ -20,7 +22,8 @@ import {
 const phone = '5493815176145'
 const whatsappText = encodeURIComponent('Hola Fabricio, quiero consultar por un sistema administrativo para mi empresa.')
 const whatsappUrl = `https://wa.me/${phone}?text=${whatsappText}`
-const demoUrl = '/demo/index.html'
+const demoUrl = DISTRI360_PAGE
+const homeHref = href => window.location.pathname.replace(/\/+$/, '') === DISTRI360_PAGE && href.startsWith('#') ? '/' + href : href
 
 const navItems = [
   ['Inicio', '#inicio'],
@@ -34,7 +37,7 @@ const navItems = [
 function Header() {
   return (
     <header className="siteHeader">
-      <a className="brand" href="#inicio" aria-label="DINTEGI inicio">
+      <a className="brand" href={homeHref('#inicio')} aria-label="DINTEGI inicio">
         <img
           src={dintegiLogo}
           alt="DINTEGI · Soluciones tecnológicas"
@@ -46,15 +49,16 @@ function Header() {
 
       <nav className="navLinks" aria-label="Navegación principal">
         {navItems.map(([label, href], index) => (
-          <a key={label} className={index === 0 ? 'active' : ''} href={href}>
+          <a key={label} className={index === 0 && window.location.pathname === '/' ? 'active' : ''} href={homeHref(href)}>
             {label}
           </a>
         ))}
       </nav>
 
-      <a className="headerCta" href={demoUrl} target="_blank" rel="noreferrer">
-        Ver demo <span>→</span>
-      </a>
+      <div className="headerActions">
+        <a className="headerAccess" href={DISTRI360_LOGIN_URL} target="_blank" rel="noopener noreferrer" aria-label="Acceder a la demo privada de DISTRI360">Acceder</a>
+        <a className="headerCta" href={demoUrl}>Ver demo</a>
+      </div>
     </header>
   )
 }
@@ -154,7 +158,7 @@ function Hero() {
         </p>
 
         <div className="heroActions">
-          <a href="#consulta" className="btn primary">Contame tu problema <span>→</span></a>
+          <a href={homeHref('#consulta')} className="btn primary">Contame tu problema <span>→</span></a>
           <a href="#casos" className="btn secondary">Conocé mi trabajo</a>
         </div>
 
@@ -238,7 +242,7 @@ function Benefits() {
         <span className="arcaHighlightIcon" aria-hidden="true"><FileText size={30} /></span>
         <div><h3>Integración con ARCA · Facturación electrónica</h3>
           <p>Conectamos la facturación electrónica con las ventas y la gestión administrativa de tu empresa.</p></div>
-        <a href="#consulta">Consultar por esta integración →</a>
+        <a href={homeHref('#consulta')}>Consultar por esta integración →</a>
       </aside>
     </section>
   )
@@ -322,7 +326,7 @@ function Cases() {
                 <summary>Ver qué desarrollé</summary>
                 <p>{item.text}</p>
                 <p>Mi trabajo: analizar el proceso, implementar las funciones y acompañar los ajustes. Las capturas y demostraciones de clientes se comparten únicamente con autorización.</p>
-                <a href="#consulta">Tengo una necesidad similar →</a>
+                <a href={homeHref('#consulta')}>Tengo una necesidad similar →</a>
               </details>
             </div>
           </article>
@@ -423,7 +427,7 @@ function Footer() {
     <footer id="contacto" className="footer">
       <div className="footerGrid">
         <div className="footerBrand">
-          <a className="footerSymbolLink" href="#inicio" aria-label="DINTEGI · Volver al inicio">
+          <a className="footerSymbolLink" href={homeHref('#inicio')} aria-label="DINTEGI · Volver al inicio">
             <img className="footerSymbol" src={dintegiSymbol} alt="DINTEGI" width="238" height="227" loading="lazy" />
           </a>
           <p>Sistemas empresariales y webs comerciales a medida. Atención directa con Fabricio Dimani, desde Tucumán.</p>
@@ -431,15 +435,15 @@ function Footer() {
 
         <div>
           <h3>Navegación</h3>
-          {navItems.map(([label, href]) => (<a key={label} href={href}>{label}</a>))}
+          {navItems.map(([label, href]) => (<a key={label} href={homeHref(href)}>{label}</a>))}
         </div>
 
         <div>
           <h3>Soluciones</h3>
-          <a href="#servicios">Transporte y logística</a>
-          <a href="#servicios">Ventas y gestión comercial</a>
-          <a href="#servicios">Cuentas corrientes y reportes</a>
-          <a href="#servicios">Trámites y expedientes</a>
+          <a href={homeHref('#servicios')}>Transporte y logística</a>
+          <a href={homeHref('#servicios')}>Ventas y gestión comercial</a>
+          <a href={homeHref('#servicios')}>Cuentas corrientes y reportes</a>
+          <a href={homeHref('#servicios')}>Trámites y expedientes</a>
         </div>
 
         <div>
@@ -447,7 +451,8 @@ function Footer() {
           <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: +54 381 5176145</a>
           <a href="mailto:fabricio@dintegi.com.ar">fabricio@dintegi.com.ar</a>
           <span>Tucumán, Argentina</span>
-          <a className="footerButton" href={demoUrl} target="_blank" rel="noreferrer">Ver demo</a>
+          <a className="footerButton" href={demoUrl}>Conocer DISTRI360</a>
+          <a href={DISTRI360_LOGIN_URL} target="_blank" rel="noopener noreferrer">Acceder a la demo de DISTRI360</a>
         </div>
       </div>
 
@@ -457,10 +462,16 @@ function Footer() {
 }
 
 export default function App() {
+  const productPage = window.location.pathname.replace(/\/+$/, '') === DISTRI360_PAGE
+  if (productPage) return <><Distri360 /><Footer /><Header /></>
   return (
     <>
       <Hero />
       <main>
+        <section className="d360-teaser" aria-labelledby="d360-teaser-title">
+          <div><p className="d360-eyebrow">PRODUCTO DINTEGI</p><h2 id="d360-teaser-title">Conocé DISTRI360</h2><p>Ventas, stock, pedidos, entregas y cobros para distribuidoras y comercios.</p></div>
+          <div><a className="btn primary" href={demoUrl}>Ver el producto</a><a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Solicitar una demostración</a></div>
+        </section>
         <Services />
         <Benefits />
         <Cases />
