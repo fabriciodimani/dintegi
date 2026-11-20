@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Truck, ClipboardList, BarChart3, FileText, ShieldCheck, Cloud } from 'lucide-react'
+import { Truck, ClipboardList, BarChart3, FileText, ShieldCheck, Cloud, Search, Settings, Users, Handshake } from 'lucide-react'
 import { DISTRI360_LOGIN_URL, DISTRI360_CONTACT } from './distri360Config'
 
 const features = [
@@ -7,6 +7,22 @@ const features = [
   [Truck, 'Stock y distribución', 'Control de depósito y camiones, entregas parciales y trazabilidad de piezas con kilos reales.'],
   [BarChart3, 'Cobros y caja', 'Cuenta corriente de clientes, cobros por distintos medios, rendiciones del chofer y cierre diario.'],
   [FileText, 'Facturación electrónica', 'Circuito de comprobantes integrado a las ventas. En esta demo, las pruebas ARCA se realizan en homologación.'],
+]
+
+const implementation = [
+  [Search, 'Conocemos tu operación', 'Conversamos sobre cómo vendés, preparás pedidos, entregás y cobrás. Revisamos juntos qué necesita tu empresa.'],
+  [Settings, 'Configuramos tu sistema', 'Definimos los productos, las listas de precios, los clientes y los usuarios necesarios para empezar, según el alcance acordado.'],
+  [Users, 'Capacitamos al equipo', 'Practicamos las tareas de cada puesto con ejemplos de tu actividad y revisamos el circuito completo antes del arranque.'],
+  [Handshake, 'Acompañamos el inicio', 'Revisamos las primeras operaciones, resolvemos dudas y ordenamos los ajustes que surjan durante la puesta en marcha.'],
+]
+
+const questions = [
+  ['¿Puedo ingresar desde otra computadora o un celular?', 'Sí. El acceso es desde un navegador con conexión a Internet y tu usuario y contraseña. En la demostración revisamos las pantallas y los equipos que va a utilizar cada persona, tanto en el negocio como en el reparto.'],
+  ['¿Puedo usar los productos y clientes que ya tengo cargados?', 'Podemos revisar los archivos de tu sistema actual o tus planillas para definir qué datos se pueden trasladar y qué preparación necesitan. La carga inicial, sus formatos y su alcance se acuerdan antes de comenzar.'],
+  ['¿Cada empleado puede tener permisos diferentes?', 'El sistema contempla usuarios y roles. Durante la implementación revisamos qué acceso necesita cada puesto y qué permisos están disponibles para ese circuito. En la demostración podemos ver los casos de administración, mostrador, preventa y reparto.'],
+  ['¿Qué necesito para emitir facturas reales con ARCA?', 'La facturación se configura para el emisor de tu empresa, con sus datos fiscales, punto de venta, certificados y autorizaciones correspondientes. Primero se verifica la conexión y el circuito de pruebas. La demo trabaja en homologación y sus comprobantes no tienen validez fiscal.'],
+  ['¿Qué capacitación y soporte incluye?', 'La propuesta detalla la capacitación inicial, el acompañamiento y las condiciones del soporte: canales, horarios y alcance. Lo acordamos según el equipo que va a utilizar el sistema y las necesidades de tu operación.'],
+  ['¿Cómo se contrata y cuánto cuesta?', 'Coordinamos una demostración, relevamos tu operación y te presentamos una propuesta con el alcance, la puesta en marcha, los costos y las condiciones del servicio. El plazo se define después de revisar los datos, los usuarios y las adaptaciones que necesite tu empresa.'],
 ]
 
 export default function Distri360() {
@@ -76,6 +92,34 @@ export default function Distri360() {
         <article><h3>Venta de mostrador</h3><p>Seleccionar productos, confirmar el cobro y consultar el ticket. La facturación se revisa en su propio paso.</p></article>
         <article><h3>Pedido con distribución</h3><p>Registrar la comanda, asignar camión y chofer, confirmar lo entregado y registrar los cobros y su rendición.</p></article>
       </div>
+    </section>
+
+    <section className="d360-implementation" id="puesta-en-marcha" aria-labelledby="d360-implementation-title">
+      <div className="d360-section">
+        <div className="d360-section-intro"><p className="d360-eyebrow">DEL PRIMER CONTACTO A LA OPERACIÓN</p>
+          <h2 id="d360-implementation-title">Así empezamos en tu empresa.</h2>
+          <p>La puesta en marcha se organiza alrededor de tu forma de trabajar, con un alcance claro y tareas acordadas.</p>
+        </div>
+        <div className="d360-implementation-grid">{implementation.map(([Icon, title, text]) => <article key={title}>
+          <div className="d360-implementation-icon"><Icon size={26} aria-hidden="true"/></div>
+          <h3>{title}</h3><p>{text}</p>
+        </article>)}</div>
+        <div className="d360-implementation-note"><p><strong>Primero conocemos tu empresa.</strong> Después acordamos el plazo, la carga inicial de datos y las adaptaciones necesarias.</p>
+          <a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Coordinar una demostración</a>
+        </div>
+      </div>
+    </section>
+
+    <section className="d360-section d360-faq" id="preguntas-frecuentes" aria-labelledby="d360-faq-title">
+      <div className="d360-faq-intro"><p className="d360-eyebrow">ANTES DE EMPEZAR</p>
+        <h2 id="d360-faq-title">Tus preguntas,<br/>con respuestas claras.</h2>
+        <p>Estas son algunas de las consultas que podemos conversar en la demostración.</p>
+        <a className="d360-text-link" href={DISTRI360_CONTACT} target="_blank" rel="noopener noreferrer">Consultar por mi empresa</a>
+      </div>
+      <div className="d360-faq-list">{questions.map(([question, answer]) => <details key={question}>
+        <summary>{question}<span className="d360-faq-toggle" aria-hidden="true"/></summary>
+        <p>{answer}</p>
+      </details>)}</div>
     </section>
 
     <section className="d360-section d360-demo-access" id="acceso-distri360" aria-labelledby="d360-access-title">
